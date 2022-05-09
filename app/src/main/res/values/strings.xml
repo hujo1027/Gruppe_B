@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">FitAtWoerk</string>
+    <string name="name">[Nutzername]</string>
+    <string name="Begruessung">Hallo, </string>
+    <string name="uebungen">Übungen</string>
+    <string name="uebungsets">Übungs-Sets</string>
+    <string name="score">Score</string>
+    <string name="meinkonto">Konto</string>
+    <string name="einstellungen">Einstellungen</string>
+    <string name="login">Login</string>
+    <string name="logout">Logout</string>
+    <string name="hilfesupport">Hilfe und Support</string>
+    <string name="kopf_und_nacken">Kopf und Nacken</string>
+    <string name="konto">Konto</string>
+    <string name="nacken_und_arme">Nacken und Arme</string>
+    <string name="arme">Arme</string>
+    <string name="torso">Torso</string>
+    <string name="becken">Becken</string>
+    <string name="beine">Beine</string>
+    <string name="becken_beine">Becken/Beine</string>
+
+    <string name="uebugsname">[Uebungsname]</string>
+</resources>

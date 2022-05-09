@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/uebungen"
+            android:title="Übungen"/>
+
+        <item
+            android:id="@+id/uebungssets"
+            android:title="Übungs-Sets"/>
+
+        <item
+            android:id="@+id/score"
+            android:title="Score"/>
+    </group>
+
+    <item android:title="Konto">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/meinkonto"
+                    android:title="@string/konto"/>
+
+                <item
+                    android:id="@+id/einstellungen"
+                    android:title="Einstellungen"/>
+
+                <item
+                    android:id="@+id/login"
+                    android:title="Login"/>
+
+                <item
+                    android:id="@+id/logout"
+                    android:title="Logout"/>
+
+            </group>
+        </menu>
+    </item>
+
+
+    <item android:title="Hilfe und Support">
+       <menu>
+           <group android:checkableBehavior="single">
+               <item
+            android:id="@+id/hilfesupport"
+            android:title="Hilfe und Support"/>
+           </group>
+       </menu>
+    </item>
+</menu>
