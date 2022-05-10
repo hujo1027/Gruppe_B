@@ -509,38 +509,38 @@
                 app:layout_constraintTop_toBottomOf="@id/imagebutton34"
                 app:layout_constraintStart_toStartOf="parent"/>
 
-            <ImageButton
-                android:id="@+id/imagebutton35"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:clickable="true"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/kategorie7"
-                android:layout_marginStart="35dp"
-                android:layout_marginTop="40dp"
-                app:srcCompat="@drawable/ic_hka_logo"/>
+                <ImageButton
+                    android:id="@+id/imagebutton35"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:clickable="true"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/kategorie7"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="40dp"
+                    app:srcCompat="@drawable/ic_hka_logo"/>
 
-            <ImageButton
-                android:id="@+id/imagebutton36"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginStart="20dp"
-                android:clickable="true"
-                app:layout_constraintStart_toEndOf="@id/imagebutton35"
-                app:layout_constraintTop_toTopOf="@id/imagebutton35"
-                app:srcCompat="@drawable/ic_hka_logo"
-                tools:layout_editor_absoluteY="150dp" />
+                <ImageButton
+                    android:id="@+id/imagebutton36"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="20dp"
+                    android:clickable="true"
+                    app:layout_constraintStart_toEndOf="@id/imagebutton35"
+                    app:layout_constraintTop_toTopOf="@id/imagebutton35"
+                    app:srcCompat="@drawable/ic_hka_logo"
+                    tools:layout_editor_absoluteY="150dp" />
 
-            <ImageButton
-                android:id="@+id/imagebutton37"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginStart="20dp"
-                android:clickable="true"
-                app:layout_constraintStart_toEndOf="@id/imagebutton36"
-                app:layout_constraintTop_toTopOf="@id/imagebutton36"
-                app:srcCompat="@drawable/klausi"
-                tools:layout_editor_absoluteY="150dp" />
+                <ImageButton
+                    android:id="@+id/imagebutton37"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="20dp"
+                    android:clickable="true"
+                    app:layout_constraintStart_toEndOf="@id/imagebutton36"
+                    app:layout_constraintTop_toTopOf="@id/imagebutton36"
+                    app:srcCompat="@drawable/klausi"
+                    tools:layout_editor_absoluteY="150dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
