@@ -3,9 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< HEAD
         <entry key="..\:/Users/josep/Documents/Hochschule.Karlsruhe/4.Sommersemester.22/Softwareentwicklung/Projekt/FitAtWork2205/Gruppe_B/app/src/main/res/layout/activity_login.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/josep/Documents/Hochschule.Karlsruhe/4.Sommersemester.22/Softwareentwicklung/Projekt/FitAtWork2205/Gruppe_B/app/src/main/res/layout/activity_profil.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/josep/Documents/Hochschule.Karlsruhe/4.Sommersemester.22/Softwareentwicklung/Projekt/FitAtWork2205/Gruppe_B/app/src/main/res/layout/activity_uebung.xml" value="0.21" />
+=======
+        <entry key="..\:/Users/josep/Documents/Hochschule.Karlsruhe/4.Sommersemester.22/Softwareentwicklung/Projekt/GruppeB/app/src/main/res/layout/activity_einstellungen.xml" value="0.18931159420289856" />
+        <entry key="..\:/Users/josep/Documents/Hochschule.Karlsruhe/4.Sommersemester.22/Softwareentwicklung/Projekt/GruppeB/app/src/main/res/layout/activity_main.xml" value="0.18931159420289856" />
+>>>>>>> aa6953ab9499e5eab360140767a6eaba1bc96713
       </map>
     </option>
   </component>

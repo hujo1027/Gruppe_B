@@ -6,6 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".hilfesupportActivity">
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> aa6953ab9499e5eab360140767a6eaba1bc96713
 </androidx.constraintlayout.widget.ConstraintLayout>
