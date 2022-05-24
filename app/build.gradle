@@ -43,9 +43,9 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     // für Datenbank
-    implementation 'com.android.support:appcompat-v7:23.4.0'
-    implementation 'com.android.support:design:23.4.0'
-    implementation 'com.android.support:cardview-v7:23.4.0'
+    //implementation 'com.android.support:appcompat-v7:23.4.0'
+    //implementation 'com.android.support:design:23.4.0'
+    //implementation 'com.android.support:cardview-v7:23.4.0'
 }
 
 apply plugin: 'com.google.gms.google-services'

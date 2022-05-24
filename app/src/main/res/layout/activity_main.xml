@@ -10,9 +10,6 @@
     tools:openDrawer="start"
     android:id="@+id/drawer_layout">
 
-<<<<<<< HEAD
-
-=======
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
@@ -20,7 +17,6 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/navigationheader"
         app:menu="@menu/hauptmenu"/>
->>>>>>> aa6953ab9499e5eab360140767a6eaba1bc96713
 
     <ScrollView
         android:layout_width="match_parent"
@@ -94,11 +90,7 @@
                 android:clickable="true"
                 app:layout_constraintStart_toEndOf="@id/imagebutton2"
                 app:layout_constraintTop_toTopOf="@id/imagebutton2"
-<<<<<<< HEAD
                 app:srcCompat="@drawable/ic_hka_logo"
-=======
-                app:srcCompat="@drawable/klausi"
->>>>>>> aa6953ab9499e5eab360140767a6eaba1bc96713
                 tools:layout_editor_absoluteY="150dp" />
 
             <ImageButton
@@ -167,11 +159,7 @@
                 android:clickable="true"
                 app:layout_constraintStart_toEndOf="@id/imagebutton7"
                 app:layout_constraintTop_toTopOf="@id/imagebutton7"
-<<<<<<< HEAD
                 app:srcCompat="@drawable/ic_hka_logo"
-=======
-                app:srcCompat="@drawable/klausi"
->>>>>>> aa6953ab9499e5eab360140767a6eaba1bc96713
                 tools:layout_editor_absoluteY="150dp" />
 
             <TextView
@@ -215,11 +203,7 @@
                 android:clickable="true"
                 app:layout_constraintStart_toEndOf="@id/imagebutton10"
                 app:layout_constraintTop_toTopOf="@id/imagebutton10"
-<<<<<<< HEAD
                 app:srcCompat="@drawable/ic_hka_logo"
-=======
-                app:srcCompat="@drawable/klausi"
->>>>>>> aa6953ab9499e5eab360140767a6eaba1bc96713
                 tools:layout_editor_absoluteY="150dp" />
 
             <ImageButton
@@ -253,11 +237,7 @@
                 android:clickable="true"
                 app:layout_constraintStart_toEndOf="@id/imagebutton13"
                 app:layout_constraintTop_toTopOf="@id/imagebutton13"
-<<<<<<< HEAD
                 app:srcCompat="@drawable/ic_hka_logo"
-=======
-                app:srcCompat="@drawable/sebastian"
->>>>>>> aa6953ab9499e5eab360140767a6eaba1bc96713
                 tools:layout_editor_absoluteY="150dp" />
 
             <TextView
@@ -301,11 +281,7 @@
                 android:clickable="true"
                 app:layout_constraintStart_toEndOf="@id/imagebutton16"
                 app:layout_constraintTop_toTopOf="@id/imagebutton16"
-<<<<<<< HEAD
                 app:srcCompat="@drawable/ic_hka_logo"
-=======
-                app:srcCompat="@drawable/klausi"
->>>>>>> aa6953ab9499e5eab360140767a6eaba1bc96713
                 tools:layout_editor_absoluteY="150dp" />
 
             <ImageButton
@@ -339,11 +315,7 @@
                 android:clickable="true"
                 app:layout_constraintStart_toEndOf="@id/imagebutton19"
                 app:layout_constraintTop_toTopOf="@id/imagebutton19"
-<<<<<<< HEAD
                 app:srcCompat="@drawable/ic_hka_logo"
-=======
-                app:srcCompat="@drawable/sebastian"
->>>>>>> aa6953ab9499e5eab360140767a6eaba1bc96713
                 tools:layout_editor_absoluteY="150dp" />
 
             <ImageButton
@@ -377,11 +349,7 @@
                 android:clickable="true"
                 app:layout_constraintStart_toEndOf="@id/imagebutton22"
                 app:layout_constraintTop_toTopOf="@id/imagebutton22"
-<<<<<<< HEAD
                 app:srcCompat="@drawable/ic_hka_logo"
-=======
-                app:srcCompat="@drawable/sebastian"
->>>>>>> aa6953ab9499e5eab360140767a6eaba1bc96713
                 tools:layout_editor_absoluteY="150dp" />
 
             <TextView
@@ -447,11 +415,7 @@
                 android:clickable="true"
                 app:layout_constraintStart_toEndOf="@id/imagebutton26"
                 app:layout_constraintTop_toTopOf="@id/imagebutton26"
-<<<<<<< HEAD
                 app:srcCompat="@drawable/ic_hka_logo"
-=======
-                app:srcCompat="@drawable/klausi"
->>>>>>> aa6953ab9499e5eab360140767a6eaba1bc96713
                 tools:layout_editor_absoluteY="150dp" />
 
             <ImageButton
@@ -485,11 +449,7 @@
                 android:clickable="true"
                 app:layout_constraintStart_toEndOf="@id/imagebutton29"
                 app:layout_constraintTop_toTopOf="@id/imagebutton29"
-<<<<<<< HEAD
                 app:srcCompat="@drawable/ic_hka_logo"
-=======
-                app:srcCompat="@drawable/sebastian"
->>>>>>> aa6953ab9499e5eab360140767a6eaba1bc96713
                 tools:layout_editor_absoluteY="150dp" />
 
             <ImageButton
@@ -523,11 +483,7 @@
                 android:clickable="true"
                 app:layout_constraintStart_toEndOf="@id/imagebutton32"
                 app:layout_constraintTop_toTopOf="@id/imagebutton32"
-<<<<<<< HEAD
                 app:srcCompat="@drawable/ic_hka_logo"
-=======
-                app:srcCompat="@drawable/sebastian"
->>>>>>> aa6953ab9499e5eab360140767a6eaba1bc96713
                 tools:layout_editor_absoluteY="150dp" />
 
             <ImageButton
@@ -553,8 +509,7 @@
                 app:layout_constraintTop_toBottomOf="@id/imagebutton34"
                 app:layout_constraintStart_toStartOf="parent"/>
 
-<<<<<<< HEAD
-            <ImageButton
+            <!--<ImageButton
                 android:id="@+id/imagebutton35"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
@@ -585,8 +540,8 @@
                 app:layout_constraintStart_toEndOf="@id/imagebutton36"
                 app:layout_constraintTop_toTopOf="@id/imagebutton36"
                 app:srcCompat="@drawable/ic_hka_logo"
-                tools:layout_editor_absoluteY="150dp" />
-=======
+                tools:layout_editor_absoluteY="150dp" />-->
+
                 <ImageButton
                     android:id="@+id/imagebutton35"
                     android:layout_width="100dp"
@@ -619,22 +574,10 @@
                     app:layout_constraintTop_toTopOf="@id/imagebutton36"
                     app:srcCompat="@drawable/klausi"
                     tools:layout_editor_absoluteY="150dp" />
->>>>>>> aa6953ab9499e5eab360140767a6eaba1bc96713
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
     </ScrollView>
 
-<<<<<<< HEAD
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:headerLayout="@layout/navigationheader"
-        app:menu="@menu/hauptmenu"/>
-
-=======
->>>>>>> aa6953ab9499e5eab360140767a6eaba1bc96713
 </androidx.drawerlayout.widget.DrawerLayout>
