@@ -6,10 +6,18 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.Locale;
 
 public class UebungsetsActivity extends AppCompatActivity {
     Toolbar toolbar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,5 +29,12 @@ public class UebungsetsActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Übungssets");
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+
+
     }
+
+
+
 }

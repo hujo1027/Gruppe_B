@@ -25,6 +25,10 @@
             android:exported="false"
             android:parentActivityName=".MainActivity"/>
         <activity
+            android:name=".RegistrierenActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
+        <activity
             android:name=".ScoreActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity"/>

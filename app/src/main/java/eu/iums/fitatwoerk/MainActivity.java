@@ -59,14 +59,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         FirebaseApp.initializeApp(this);
         mAuth = FirebaseAuth.getInstance();
 
-        if(mAuth.getCurrentUser() == null) {
+        /*if(mAuth.getCurrentUser() == null) {
             Menu menu = navigationView.getMenu();
             menu.findItem(R.id.logout).setVisible(false);
             menu.findItem(R.id.meinkonto).setVisible(false);
         } else {
             Menu menu = navigationView.getMenu();
             menu.findItem(R.id.login).setVisible(false);
-        }
+        }*/
 
         //navigationView.bringToFront();
         /*ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navdrawer_open, R.string.navdrawer_close);
