@@ -29,25 +29,18 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/uebungsname"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="80dp"
-                android:textAlignment="center"
-                android:text="strings/uebungsname"
-                android:textSize="20sp"
-                app:layout_constraintTop_toBottomOf="@id/toolbar"
-                app:layout_constraintStart_toStartOf="parent"/>
 
-            <ImageView
-                android:id="@+id/uebungsbild"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="200dp"
-                android:layout_marginLeft="50dp"
-                android:src="@drawable/ic_hka_logo"
-                app:layout_constraintTop_toBottomOf="@id/uebungsname" />
+            <com.denzcoskun.imageslider.ImageSlider
+
+                android:id="@+id/image_slider"
+                android:layout_width="match_parent"
+                android:layout_height="450dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/toolbar"
+                android:layout_marginTop="40dp"
+
+
+                tools:replace="android:allowBackup" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -106,8 +99,8 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="550dp"
                 android:text="00:00"
-                android:textSize="50sp"
-                android:textColor="@android:color/black"/>
+                android:textColor="@android:color/black"
+                android:textSize="50sp" />
 
         </RelativeLayout>
 
