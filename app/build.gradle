@@ -42,6 +42,9 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
+    implementation 'com.github.denzcoskun:ImageSlideShow:0.1.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+
     // für Datenbank
     //implementation 'com.android.support:appcompat-v7:23.4.0'
     //implementation 'com.android.support:design:23.4.0'
