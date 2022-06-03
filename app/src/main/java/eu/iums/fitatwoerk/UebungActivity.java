@@ -1,13 +1,20 @@
 package eu.iums.fitatwoerk;
 
+import static eu.iums.fitatwoerk.R.drawable.ic_baseline_pause_24;
+
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.view.MotionEvent;
+import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -27,7 +34,7 @@ public class UebungActivity extends AppCompatActivity {
     Toolbar toolbar;
 
     //TIMER
-    private static final long START_TIME_IN_MILLIS = 600000;        //Individuelle Zeit eingeben
+    private static final long START_TIME_IN_MILLIS = 90000;        //Individuelle Zeit eingeben
     private TextView mTextViewCountDown;
     private FloatingActionButton mButtonStartPause;
     private FloatingActionButton mButtonReset;
@@ -36,19 +43,16 @@ public class UebungActivity extends AppCompatActivity {
     private long mTimeLeftInMillis = START_TIME_IN_MILLIS;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_uebung);
 
         FloatingActionButton fabBeschreibung = findViewById(R.id.fabBeschreibung);
-        FloatingActionButton fabvorher = findViewById(R.id.fabVorherigeUebung);
-        FloatingActionButton fabnacher = findViewById(R.id.fabNaechsteUebung);
-
-
-
-
+        FloatingActionButton fabset = findViewById(R.id.fabSet);
         ImageSlider imageSlider = findViewById(R.id.image_slider);
+
 
         // anzeigen der passenden Bilder
         Bundle extras = getIntent().getExtras();
@@ -64,20 +68,26 @@ public class UebungActivity extends AppCompatActivity {
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), "-Kopf nach unten neigen\n" +
-                                "- Kopf langsam nach oben neigen\n", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage(" -Kopf nach unten neigen\n" +
+                                "- Kopf langsam nach oben neigen ").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
@@ -90,21 +100,27 @@ public class UebungActivity extends AppCompatActivity {
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), "- Kopf Richtung Schulter neigen, bis Dehngefühl im Bereich der gegenüberliegenden Kopf-Nackenpartie entsteht\n" +
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage(" - Kopf Richtung Schulter neigen, bis Dehngefühl im Bereich der gegenüberliegenden Kopf-Nackenpartie entsteht\n" +
                                 "- Dann direkt zur anderen Seite neigen\n" +
-                                "- Kopf nicht in der Endposition halten\n", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                                "- Kopf nicht in der Endposition halten ").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
@@ -117,26 +133,31 @@ public class UebungActivity extends AppCompatActivity {
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), " - Kopf zur Seite drehen bis ein Dehngefühl entsteht\n" +
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage(" - Kopf zur Seite drehen bis ein Dehngefühl entsteht\n" +
                                 "- Kopf zur anderen Seite drehen\n" +
-                                "- Kopf nicht in der Endposition halten ", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                                "- Kopf nicht in der Endposition halten ").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
                 break;
-
 
             case "uebung4":
                 slideModelList.add(new SlideModel (R.drawable.f10, null));
@@ -145,48 +166,60 @@ public class UebungActivity extends AppCompatActivity {
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), "- Kopf Richtung Schulter neigen, bis ein Dehngefühl im gegenüberliegenden Kopf-Nacken-Bereich entsteht\n" +
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage(" - Kopf Richtung Schulter neigen, bis ein Dehngefühl im gegenüberliegenden Kopf-Nacken-Bereich entsteht\n" +
                                 "- Kopf vorsichtig weiter zur Seite neigen\n" +
-                                "- In der Endposition halten\n", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                                "- In der Endposition halten ").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
                 break;
 
             case "uebung5":
-                slideModelList.add(new SlideModel (R.drawable.f5, null));
+
                 slideModelList.add(new SlideModel (R.drawable.f9, null));
                 imageSlider.setImageList(slideModelList, ScaleTypes.CENTER_INSIDE);
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), " - Kopf nach vorne neigen bis ein Dehngefühl im Nacken entsteht\n" +
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage(" - Kopf nach vorne neigen bis ein Dehngefühl im Nacken entsteht\n" +
                                 "- Kopf vorsichtig mit beiden Händen weiter neigen\n" +
-                                "- In der Endposition halten  ", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                                "- In der Endposition halten  ").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
@@ -199,47 +232,58 @@ public class UebungActivity extends AppCompatActivity {
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), " - Schultern vorwärts oder rückwärts kreisen ", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage(" - Schultern vorwärts oder rückwärts kreisen ").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
                 break;
-
             case "uebung7":
                 slideModelList.add(new SlideModel (R.drawable.f14, null));
                 imageSlider.setImageList(slideModelList, ScaleTypes.CENTER_INSIDE);
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), " - Mit aufrechtem Rücken auf einen Stuhl setzen, so dass keine Lehne am\n" +
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage(" - Mit aufrechtem Rücken auf einen Stuhl setzen, so dass keine Lehne am\n" +
                                 "Rücken ist\n" +
                                 "- Schulterblätter zusammenziehen (mit den Armen hinter dem Rücken die\n" +
                                 "Handinnenfläche nach außen und die Daumen nach innen drehen)\n" +
-                                "- In der Endposition halten ", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                                "- In der Endposition halten ").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
@@ -251,22 +295,28 @@ public class UebungActivity extends AppCompatActivity {
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), " - Hände zusammenfalten und die Arme vor dem Körper ausstrecken\n" +
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage("- Hände zusammenfalten und die Arme vor dem Körper ausstrecken\n" +
                                 "- Schulter und Arme nach vorne unten stoßen, dabei das Kinn in Richtung\n" +
                                 "Nacken geschoben halten\n" +
-                                "- In der Endposition halten ", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                                "- In der Endposition halten  ").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
@@ -279,23 +329,29 @@ public class UebungActivity extends AppCompatActivity {
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), " - Im Ausfallschritt parallel zur Wand Aufstellen und mit einem Arm an der\n" +
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage(" - Im Ausfallschritt parallel zur Wand Aufstellen und mit einem Arm an der\n" +
                                 "Wand abstützen\n" +
                                 "- Oberkörper vorsichtig von dem aufgestützten Arm wegdrehen bis ein\n" +
                                 "Dehngefühl in der Brustmuskulatur entsteht\n" +
-                                "- In der Endposition halten ", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                                "- In der Endposition halten\n ").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
@@ -308,23 +364,29 @@ public class UebungActivity extends AppCompatActivity {
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), "  - Ellbogen des zu dehnenden Armes beugen\n" +
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage(" - Ellbogen des zu dehnenden Armes beugen\n" +
                                 "- Arm neben den Kopf hochheben\n" +
                                 "- Mit anderer Hand den Ellbogen fassen und hinter dem Kopf nach unten\n" +
                                 "stoßen, bis ein Dehngefühl am hinteren Teil der Schulter und des Oberarms entsteht\n" +
-                                "- In der Endposition halten ", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                                "- In der Endposition halten ").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
@@ -336,25 +398,30 @@ public class UebungActivity extends AppCompatActivity {
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), " - Ellbogen des zu dehnenden Armes von hinten fassen und vor dem Körper zur entgegengesetzten Schulter hin ziehen\n" +
-                                "- In der Endposition halten ", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage("- Ellbogen des zu dehnenden Armes von hinten fassen und vor dem Körper zur entgegengesetzten Schulter hin ziehen\n" +
+                                "- In der Endposition halten  ").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
                 break;
-
             case "uebung12":
                 slideModelList.add(new SlideModel (R.drawable.f24, null));
                 slideModelList.add(new SlideModel (R.drawable.f17, null));
@@ -362,21 +429,27 @@ public class UebungActivity extends AppCompatActivity {
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), "  - Zu dehnender Unterarm vor dem Körper gestreckt im Ellbogen halten\n" +
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage(" - Zu dehnender Unterarm vor dem Körper gestreckt im Ellbogen halten\n" +
                                 "- Mit Hilfe der anderen Hand zu dehnende Hand langsam nach unten biegen, bis ein Dehngefühl im Unterarm entsteht\n" +
-                                "- In der Endposition halten ", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                                "- In der Endposition halten ").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
@@ -384,27 +457,33 @@ public class UebungActivity extends AppCompatActivity {
 
             case "uebung13":
                 slideModelList.add(new SlideModel (R.drawable.f25, null));
-                slideModelList.add(new SlideModel (R.drawable.f9, null));
+
                 imageSlider.setImageList(slideModelList, ScaleTypes.CENTER_INSIDE);
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), " - Mit flacher Hand auf dem Tisch abstützen (Finger zum Körper, Ellbogen\n" +
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage(" - Mit flacher Hand auf dem Tisch abstützen (Finger zum Körper, Ellbogen\n" +
                                 "gestreckt)\n" +
                                 "- Körpergewicht nach hinten verlagern, bis ein Dehngefühl an den Innenseiten der Unterarme entsteht\n" +
-                                "- In der Endposition halten ", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                                "- In der Endposition halten\n ").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
@@ -418,20 +497,26 @@ public class UebungActivity extends AppCompatActivity {
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), " - Eine Hand stützt auf dem Tisch, anderer Arm hängt entspannt und pendelt kreisförmig\n" +
-                                "- Immer wieder die Kreisrichtung wechseln ", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage(" - Eine Hand stützt auf dem Tisch, anderer Arm hängt entspannt und pendelt kreisförmig\n" +
+                                "- Immer wieder die Kreisrichtung wechseln ").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
@@ -443,20 +528,26 @@ public class UebungActivity extends AppCompatActivity {
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), " - Im Sitzen Oberkörper und Kopf zwischen die Knie senken, sodass der Rücken möglichst rund wird\n" +
-                                "- In der Endposition halten\n ", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage(" - Im Sitzen Oberkörper und Kopf zwischen die Knie senken, sodass der Rücken möglichst rund wird\n" +
+                                "- In der Endposition halten ").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
@@ -469,7 +560,8 @@ public class UebungActivity extends AppCompatActivity {
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), " - Die Übung findet im Sitzen statt\n" +
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage("- Die Übung findet im Sitzen statt\n" +
                                 "- Kinn zur Brust hinbewegen, Oberkörper einrollen\n" +
                                 "- Kopf und Schultern bleiben locker, das Gesäß hebt sich nicht von der\n" +
                                 "Sitzfläche ab\n" +
@@ -477,19 +569,24 @@ public class UebungActivity extends AppCompatActivity {
                                 "Oberkörper aufrichten/strecken und das Brustbein zur Decke heben (Blick\n" +
                                 "zur Decke)\n" +
                                 "- Wenn eine Rückenlehne vorhanden ist, kann man sich auch anlehnen\n" +
-                                "- Endposition nicht halten ", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                                "- Endposition nicht halten  ").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
@@ -502,21 +599,27 @@ public class UebungActivity extends AppCompatActivity {
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), "  - Hände seitlich auf den Schultern\n" +
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage("  Hände seitlich auf den Schultern\n" +
                                 "- Rumpf seitlich nach links und rechts neigen, ohne nach vorne/hinten\n" +
-                                "auszuweichen ", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                                "auszuweichen ").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
@@ -530,22 +633,28 @@ public class UebungActivity extends AppCompatActivity {
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), " - Die Übung findet im Sitzen statt\n" +
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage(" - Die Übung findet im Sitzen statt\n" +
                                 "- Die Arme über dem Brustkorb kreuzen und die Fingerspitzen auf die\n" +
                                 "Schultern legen\n" +
-                                "- Den Oberkörper nach rechts und links drehen, der Kopf folgt der Bewegung ", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                                "- Den Oberkörper nach rechts und links drehen, der Kopf folgt der Bewegung\n ").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
@@ -557,21 +666,27 @@ public class UebungActivity extends AppCompatActivity {
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), " - An einer offenen Tür an den Griffen festhalten\n" +
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage("- An einer offenen Tür an den Griffen festhalten\n" +
                                 "- In die Hocke gehen und dabei den Rücken dehnen\n" +
-                                "- In der Endposition halten ", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                                "- In der Endposition halten  ").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
@@ -584,21 +699,27 @@ public class UebungActivity extends AppCompatActivity {
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), " - Im Stehen Körper zur Seite neigen und Arm schräg nach oben strecken\n" +
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage(" - Im Stehen Körper zur Seite neigen und Arm schräg nach oben strecken\n" +
                                 "- Das Becken bleibt ruhig\n" +
-                                "- In der Endposition halten ", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                                "- In der Endposition halten ").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
@@ -611,26 +732,31 @@ public class UebungActivity extends AppCompatActivity {
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), "  - Mit dem Rücken gegen die Wand stellen, Schultern und Hände gegen\n" +
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage(" - Mit dem Rücken gegen die Wand stellen, Schultern und Hände gegen\n" +
                                 "die Wand drücken\n" +
-                                "- In der Endposition halten ", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                                "- In der Endposition halten ").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
                 break;
-
             case "uebung22":
                 slideModelList.add(new SlideModel (R.drawable.f30, null));
                 slideModelList.add(new SlideModel (R.drawable.f41, null));
@@ -638,24 +764,30 @@ public class UebungActivity extends AppCompatActivity {
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), " - Die Übung findet im Sitzen statt\n" +
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage(" - Die Übung findet im Sitzen statt\n" +
                                 "- Arme vor der Brust verschränken und die Schultern nach vorne zusammenziehen\n" +
                                 "- Oberkörper nach vorne beugen, gleichzeitig drehen und seitwärts in dieselben Richtung neigen" +
-                                "- Mit dem Blick der Bewegung folgen\n" +
+                                " - Mit dem Blick der Bewegung folgen\n" +
                                 "- Während der Bewegung ausatmen, dann zurück zur Ausgangsstellung\n" +
-                                "und dasselbe in die andere Richtung wiederholen ", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                                "und dasselbe in die andere Richtung wiederholen").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
@@ -668,26 +800,31 @@ public class UebungActivity extends AppCompatActivity {
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), "- Im Sitzen den Rücken nach hinten einsinken lassen und ihn danach mit\n" +
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage(" - Im Sitzen den Rücken nach hinten einsinken lassen und ihn danach mit\n" +
                                 "Hilfe der Rückenmuskulatur wieder strecken\n" +
-                                "- Kein zu starkes Hohlkreuz machen  ", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                                "- Kein zu starkes Hohlkreuz machen ").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
                 break;
-
             case "uebung24":
                 slideModelList.add(new SlideModel (R.drawable.f31, null));
                 slideModelList.add(new SlideModel (R.drawable.f32, null));
@@ -695,25 +832,30 @@ public class UebungActivity extends AppCompatActivity {
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), "- Im Stehen das Becken rechts/links zur Seite schieben und darauf achten,\n" +
-                                "dass der Rumpf weder nach vorne noch nach hinten kippt\n  ", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage(" - Im Stehen das Becken rechts/links zur Seite schieben und darauf achten,\n" +
+                                "dass der Rumpf weder nach vorne noch nach hinten kippt\n ").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
                 break;
-
             case "uebung25":
                 slideModelList.add(new SlideModel (R.drawable.f43, null));
                 slideModelList.add(new SlideModel (R.drawable.f36, null));
@@ -721,28 +863,33 @@ public class UebungActivity extends AppCompatActivity {
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), " - Im Sitzen ein Bein an den Oberkörper ziehen und anwinkeln\n" +
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage("- Im Sitzen ein Bein an den Oberkörper ziehen und anwinkeln\n" +
                                 "- Mit den Armen das gebeugte Knie weiter Richtung gegenseitiger Schulter ziehen\n" +
                                 "- Ein Dehngefühl entsteht an der hinteren Oberschenkelmuskulatur und\n" +
                                 "im Gesäß\n" +
-                                "- In der Endposition halten\n ", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                                "- In der Endposition halten  ").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
                 break;
-
             case "uebung26":
                 slideModelList.add(new SlideModel (R.drawable.f48, null));
 
@@ -750,28 +897,33 @@ public class UebungActivity extends AppCompatActivity {
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), " - Sich an Wand/Stuhl festhalten\n" +
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage(" - Sich an Wand/Stuhl festhalten\n" +
                                 "- Ein Fußgelenk mit der Hand hinten fassen, Knie zeigt in Richtung Boden\n" +
                                 "- Fuß Richtung Gesäß ziehen, ohne ein zu starkes Hohlkreuz zuzulassen,\n" +
                                 "bis Dehngefühl am vorderen Oberschenkel entsteht\n" +
-                                "- In der Endposition halten ", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                                "- In der Endposition halten ").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
                 break;
-
             case "uebung27":
                 slideModelList.add(new SlideModel (R.drawable.f44, null));
                 slideModelList.add(new SlideModel (R.drawable.f42, null));
@@ -779,29 +931,34 @@ public class UebungActivity extends AppCompatActivity {
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), "- Zu dehnendes Bein mit der Ferse auf einen Stuhl\n" +
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage("- Zu dehnendes Bein mit der Ferse auf einen Stuhl\n" +
                                 "- Körper aufrichten\n" +
                                 "- Knie strecken und Fußspitzen in Richtung Kniescheibe hochziehen\n" +
                                 "- Sollte die Dehnung nicht ausreichen, den Oberkörper gerade nach vorne\n" +
                                 "neigen, bis eine Dehnung gespürt wird\n" +
-                                "- In der Endposition halten\n  ", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                                "- In der Endposition halten  ").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
                 break;
-
             case "uebung28":
                 slideModelList.add(new SlideModel (R.drawable.f44, null));
                 slideModelList.add(new SlideModel (R.drawable.f42, null));
@@ -809,22 +966,28 @@ public class UebungActivity extends AppCompatActivity {
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), " - Seitlich neben einen Stuhl stellen und das zu dehnende Bein mit der\n" +
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage(" - Seitlich neben einen Stuhl stellen und das zu dehnende Bein mit der\n" +
                                 "Ferse auf den Stuhl\n" +
                                 "- Oberkörper zur Seite über das Bein neigen, bis ein Dehngefühl an der Innenseite des Oberschenkels entsteht\n" +
-                                "- In der Endposition halten ", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                                "- In der Endposition halten\n ").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
@@ -837,22 +1000,28 @@ public class UebungActivity extends AppCompatActivity {
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), "- Auf Stuhl setzen und ein Bein auf dem anderen gebeugt ablegen\n" +
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage(" - Auf Stuhl setzen und ein Bein auf dem anderen gebeugt ablegen\n" +
                                 "- Bei geradem, vorgeneigtem Rücken das Knie sanft Richtung Boden\n" +
                                 "schieben, bis ein Dehngefühl tief im Gesäß und an der Oberschenkelaußenseite entsteht\n" +
-                                "- In der Endposition halten  ", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                                "- In der Endposition halten ").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
@@ -865,22 +1034,28 @@ public class UebungActivity extends AppCompatActivity {
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), " - Mit gestreckten Armen und geradem Rücken gegen eine Wand stützen,\n" +
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage(" - Mit gestreckten Armen und geradem Rücken gegen eine Wand stützen,\n" +
                                 "Füße zusammen\n" +
                                 "- Körper zur Wand sinken lassen, Fußsohlen bleiben auf dem Boden\n" +
-                                "- Die Dehnung ist in den Waden zu spüren ", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                                "- Die Dehnung ist in den Waden zu spüren ").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
@@ -893,24 +1068,30 @@ public class UebungActivity extends AppCompatActivity {
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), " - In Ausfallschritt aufstellen\n" +
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage("  - In Ausfallschritt aufstellen\n" +
                                 "- Mit den Händen das Knie des vorderen Beines abstützen, das andere\n" +
                                 "Knie gestreckt halten\n" +
                                 "- Becken nach vorne unten drücken, bis ein Dehngefühl an der Vorderseite des Oberschenkels und in der Leistengegend entsteht\n" +
                                 "- Rücken aufrecht halten\n" +
-                                "- In der Endposition halten ", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                                "- In der Endposition halten ").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
@@ -923,25 +1104,30 @@ public class UebungActivity extends AppCompatActivity {
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), " - Leicht an Stuhl/Wand abstützen\n" +
-                                "- In den Zehenstand hochstemmen und langsam zurück ", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage(" - Leicht an Stuhl/Wand abstützen\n" +
+                                "- In den Zehenstand hochstemmen und langsam zurück ").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
                 break;
-
             case "uebung33":
                 slideModelList.add(new SlideModel (R.drawable.f47, null));
                 slideModelList.add(new SlideModel (R.drawable.f35, null));
@@ -949,21 +1135,27 @@ public class UebungActivity extends AppCompatActivity {
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), " - Seitlich auf eine Treppenstufe stellen und mit den Händen an Wand/Geländer festhalten\n" +
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage(" - Seitlich auf eine Treppenstufe stellen und mit den Händen an Wand/Geländer festhalten\n" +
                                 "- Ein Bein über die Kante hängen lassen\n" +
-                                "- Bein vorwärts und rückwärts pendeln lassen ", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                                "- Bein vorwärts und rückwärts pendeln lassen ").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
@@ -975,26 +1167,31 @@ public class UebungActivity extends AppCompatActivity {
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), " - Beine schulterbreit aufstellen, Knie beugen, Knie und Fußspitzen zeigen\n" +
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage("- Beine schulterbreit aufstellen, Knie beugen, Knie und Fußspitzen zeigen\n" +
                                 "nach außen\n" +
-                                "- Beine strecken, wobei Rücken gerade und Becken aufgerichtet bleiben ", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                                "- Beine strecken, wobei Rücken gerade und Becken aufgerichtet bleiben  ").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
                 break;
-
             case "uebung35":
                 slideModelList.add(new SlideModel (R.drawable.f52, null));
                 slideModelList.add(new SlideModel (R.drawable.f58, null));
@@ -1004,21 +1201,27 @@ public class UebungActivity extends AppCompatActivity {
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), " - Auf Stuhl setzen und Bein waagrecht zur Sitzfläche austrecken\n" +
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage(" - Auf Stuhl setzen und Bein waagrecht zur Sitzfläche austrecken\n" +
                                 "- Zehnspitzen hochziehen, die vordere Oberschenkelmuskulatur anspannen und das Knie strecken\n" +
-                                "- Fuß wieder absetzen und dasselbe mit der anderen Seite wiederholen ", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                                "- Fuß wieder absetzen und dasselbe mit der anderen Seite wiederholen ").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
@@ -1031,27 +1234,32 @@ public class UebungActivity extends AppCompatActivity {
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), " - Schulterbreit vor einen Stuhl stellen und mit beiden Händen auf dem\n" +
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage(" - Schulterbreit vor einen Stuhl stellen und mit beiden Händen auf dem\n" +
                                 "Stuhl abstützen\n" +
                                 "- Füße langsam zur Seite rutschen lassen, bis ein Dehngefühl an der Innenseite der Oberschenkel entsteht\n" +
-                                "- In der Dehnung halten ", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                                "- In der Dehnung halten ").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
                 break;
-
             case "uebung37":
                 slideModelList.add(new SlideModel (R.drawable.f50, null));
                 slideModelList.add(new SlideModel (R.drawable.f51, null));
@@ -1059,29 +1267,34 @@ public class UebungActivity extends AppCompatActivity {
                 fabBeschreibung.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(v.getContext(), " - Zu dehnendes Bein nach hinten strecken, das andere Bein nach vorne\n" +
+
+                        AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage(" - Zu dehnendes Bein nach hinten strecken, das andere Bein nach vorne\n" +
                                 "beugen\n" +
                                 "- Mit den Händen an der Wand oder auf einem Stuhl abstützen\n" +
                                 "- Körper nach vorne abwärts verlagern, bis eine Dehngefühl in der Wade\n" +
                                 "des hinteren Beines entsteht\n" +
-                                "- In der Endposition halten ", Toast.LENGTH_LONG).show();
-                    }
-                });
-                fabnacher.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                                "- In der Endposition halten ").setTitle("Ausführung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create();
+                        alertDialog.show();
+
 
                     }
                 });
 
-                fabvorher.setOnClickListener(new View.OnClickListener() {
+
+                fabset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        finish();
 
                     }
                 });
                 break;
-
         }
 
 
@@ -1094,6 +1307,7 @@ public class UebungActivity extends AppCompatActivity {
 
         imageSlider.setImageList(slideModelList, ScaleTypes.CENTER_INSIDE);
 
+
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Übungen");
@@ -1102,6 +1316,13 @@ public class UebungActivity extends AppCompatActivity {
 
 
 
+        fabset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), UebungsetsActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
         //TIMER
@@ -1116,12 +1337,23 @@ public class UebungActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(mTimerRunning){
                     pauseTimer();
+                    mButtonStartPause.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.start_exercise));  //Austauschen des Icons
+
                 } else {
                     startTimer();
+                    mButtonStartPause.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), ic_baseline_pause_24));  //Austauschen des Icons
+
                 }
             }
         });
+
+
+
+
     }
+
+
+
 
 
 
@@ -1139,7 +1371,9 @@ public class UebungActivity extends AppCompatActivity {
                 mTimerRunning = false;
                 //mButtonStartPause.setText("Start");
                 mButtonStartPause.setVisibility(View.INVISIBLE);
-                mButtonReset.setVisibility(View.VISIBLE);
+
+                Toast.makeText(mTextViewCountDown.getContext(), "Geschafft!", Toast.LENGTH_LONG).show();
+
             }
         }.start();
 
