@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "391847826162",
-    "project_id": "fitatwoerk",
-    "storage_bucket": "fitatwoerk.appspot.com"
+    "project_number": "720194026980",
+    "project_id": "fitatwoerk-bdbf9",
+    "storage_bucket": "fitatwoerk-bdbf9.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:391847826162:android:508dff2975e4f9bbe0f66b",
+        "mobilesdk_app_id": "1:720194026980:android:2aef6c4d703308de7f1bf1",
         "android_client_info": {
           "package_name": "eu.iums.fitatwoerk"
         }
       },
       "oauth_client": [
         {
-          "client_id": "391847826162-30j23c28iniv6ro03eqlikiii0kf9hal.apps.googleusercontent.com",
+          "client_id": "720194026980-rj7rmlqf3ej4dkm8dokhi38amkop2i6l.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBkr5fzwpsyYYjbaqaXJJMD6dX2mpSWC2A"
+          "current_key": "AIzaSyDZGuiHjjgYJh7qcJSN5UcJ-NEU3QvnGLE"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "391847826162-30j23c28iniv6ro03eqlikiii0kf9hal.apps.googleusercontent.com",
+              "client_id": "720194026980-rj7rmlqf3ej4dkm8dokhi38amkop2i6l.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

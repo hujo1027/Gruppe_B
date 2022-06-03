@@ -59,20 +59,22 @@
         android:layout_gravity="center">
 
         <EditText
+            android:id="@+id/editName"
             android:layout_width="300dp"
-            android:layout_height="match_parent"
-            android:hint="Vorname"
+            android:layout_height="48dp"
+            android:hint="Vorname und Nachname"
             />
 
         <TextView
+            android:id="@+id/textName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="12sp"
-            android:text="Vorname eingeben"/>
+            android:text="Vorname und Nachname eingeben"/>
 
     </LinearLayout>
 
-    <LinearLayout
+   <!-- <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -112,7 +114,7 @@
             android:textSize="12sp"
             android:text="Benutzername eingeben"/>
 
-    </LinearLayout>
+    </LinearLayout> !-->
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -122,12 +124,14 @@
         android:layout_gravity="center">
 
         <EditText
+            android:id="@+id/editAge"
             android:layout_width="300dp"
-            android:layout_height="match_parent"
+            android:layout_height="48dp"
             android:hint="Alter"
             />
 
         <TextView
+            android:id="@+id/textAge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="12sp"
@@ -143,12 +147,14 @@
         android:layout_gravity="center">
 
         <EditText
+            android:id="@+id/editEmail"
             android:layout_width="300dp"
-            android:layout_height="match_parent"
+            android:layout_height="48dp"
             android:hint="E-Mail"
             />
 
         <TextView
+            android:id="@+id/textEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="12sp"
@@ -164,12 +170,14 @@
         android:layout_gravity="center">
 
         <EditText
+            android:id="@+id/editPassword"
             android:layout_width="300dp"
-            android:layout_height="match_parent"
+            android:layout_height="48dp"
             android:hint="Passwort"
             />
 
         <TextView
+            android:id="@+id/textPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="12sp"
@@ -185,6 +193,7 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/buttonRegister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"

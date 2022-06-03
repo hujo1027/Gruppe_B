@@ -34,22 +34,22 @@
         android:layout_gravity="center">
 
         <EditText
-            android:id="@+id/editNickname"
+            android:id="@+id/editEmail"
             android:layout_width="300dp"
             android:layout_height="match_parent"
-            android:hint="Nutzername"
+            android:hint="E-Mail"
             tools:ignore="TouchTargetSizeCheck" />
 
         <TextView
-            android:id="@+id/textNickname"
+            android:id="@+id/textEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="12sp"
-            android:text="Benutzername eingeben"/>
+            android:text="E-Mail eingeben"/>
 
     </LinearLayout>
 
-    <LinearLayout
+    <!-- <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -70,7 +70,7 @@
             android:layout_height="wrap_content"
             android:textSize="12sp"
             android:text="Klarname eingeben"/>
-    </LinearLayout>
+    </LinearLayout> !-->
 
     <LinearLayout
         android:layout_width="wrap_content"

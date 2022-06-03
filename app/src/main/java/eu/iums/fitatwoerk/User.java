@@ -2,41 +2,16 @@ package eu.iums.fitatwoerk;
 
 public class User {
 
-    private int id;
-    private String nickname;
-    private String name;
-    private String password;
+    public String name, age, email;
 
-    public int getId(){
-        return id;
+    User() {
+
     }
 
-    public void setId(int id){
-        this.id = id;
-    }
-
-    public String getNickname(){
-        return nickname;
-    }
-
-    public void setNickname(String nickname){
-        this.nickname = nickname;
-    }
-
-    public String getName(){
-        return name;
-    }
-
-    public void setName(String name){
+    User(String name, String age, String email) {
         this.name = name;
-    }
-
-    public String getPassword(){
-        return password;
-    }
-
-    public void setPassword(String password){
-        this.password = password;
+        this.age = age;
+        this.email = email;
     }
 
 }
