@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class RegistrierenActivity extends AppCompatActivity {
@@ -23,6 +24,7 @@ public class RegistrierenActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private Button buttonRegister;
     private EditText editTextName,editTextAge, editTextEmail, editTextPassword;
+    private  FirebaseUser mUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class RegistrierenActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Login");
 
         mAuth = FirebaseAuth.getInstance();
+        mUser = mAuth.getCurrentUser();
 
         buttonRegister = (Button) findViewById(R.id.buttonRegister);
         buttonRegister.setOnClickListener(new View.OnClickListener() {
@@ -51,6 +54,16 @@ public class RegistrierenActivity extends AppCompatActivity {
 
     }
 
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null){
+            currentUser.reload();
+        }
+    }
 
     private void registerUser() {
         String email = editTextEmail.getText().toString().trim();
@@ -93,6 +106,9 @@ public class RegistrierenActivity extends AppCompatActivity {
             editTextPassword.requestFocus();
             return;
         }
+
+
+
     // User in der Datenbank anlegen
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -127,5 +143,10 @@ public class RegistrierenActivity extends AppCompatActivity {
                         }
                     }
                 });
+
+
     }
+
+
+
 }
