@@ -23,6 +23,7 @@ public class RegistrierenActivity extends AppCompatActivity {
     Toolbar toolbar;
     private FirebaseAuth mAuth;
     private Button buttonRegister;
+    private FirebaseDatabase db;
     private EditText editTextName,editTextAge, editTextEmail, editTextPassword;
     private  FirebaseUser mUser;
 
@@ -37,6 +38,7 @@ public class RegistrierenActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
+        db = FirebaseDatabase.getInstance("https://fitatwoerk-bdbf9-default-rtdb.europe-west1.firebasedatabase.app/");
 
         buttonRegister = (Button) findViewById(R.id.buttonRegister);
         buttonRegister.setOnClickListener(new View.OnClickListener() {
@@ -119,7 +121,7 @@ public class RegistrierenActivity extends AppCompatActivity {
 
                             User user = new User(name, age, email);
                     // prüfen, ob Task erfolgreich war
-                            FirebaseDatabase.getInstance().getReference("Users")
+                            db.getReference("Users")
                                     .child(mAuth.getCurrentUser().getUid())
                                     .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
