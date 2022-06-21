@@ -174,7 +174,7 @@ public class RegistrierenActivity extends AppCompatActivity {
                                         public void onComplete(@NonNull Task<Void> task) {
 
                                             if (task.isSuccessful()) {
-                                                Toast.makeText(RegistrierenActivity.this, "Nutzer wurde erfolgreich registriert. Sie können sich nun einloggen.", Toast.LENGTH_LONG).show();
+                                                Toast.makeText(RegistrierenActivity.this, "Nutzer wurde erfolgreich registriert.", Toast.LENGTH_LONG).show();
 
                                                 // User zum Profil zurückleiten
                                                 Intent intent_login = new Intent(RegistrierenActivity.this, LoginActivity.class);
