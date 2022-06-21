@@ -6,6 +6,8 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -26,6 +28,9 @@ public class RegistrierenActivity extends AppCompatActivity {
     private FirebaseDatabase db;
     private EditText editTextName,editTextAge, editTextEmail, editTextPassword;
     private  FirebaseUser mUser;
+    private RadioGroup radioGroup;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +58,9 @@ public class RegistrierenActivity extends AppCompatActivity {
         editTextEmail = (EditText) findViewById(R.id.editEmail);
         editTextPassword = (EditText) findViewById(R.id.editPassword);
 
+        radioGroup = (RadioGroup) findViewById(R.id.radioGroupSportLevel);
+
+
 
     }
 
@@ -72,6 +80,29 @@ public class RegistrierenActivity extends AppCompatActivity {
         String password = editTextPassword.getText().toString().trim();
         String name = editTextName.getText().toString().trim();
         String age = editTextAge.getText().toString().trim();
+        radioGroup.setOnCheckedChangeListener(
+                new RadioGroup
+                        .OnCheckedChangeListener() {
+                    @Override
+
+                    // The flow will come here when
+                    // any of the radio buttons in the radioGroup
+                    // has been clicked
+
+                    // Check which radio button has been clicked
+                    public void onCheckedChanged(RadioGroup group,
+                                                 int checkedId)
+                    {
+
+                        // Get the selected Radio Button
+                        RadioButton
+                                radioButton
+                                = (RadioButton)group
+                                .findViewById(checkedId);
+                    }
+                }
+        );
+        int sportLevel = radioGroup.getCheckedRadioButtonId();
 
         if (name.isEmpty()) {
             editTextName.setError("Pflichtfeld");
@@ -83,6 +114,13 @@ public class RegistrierenActivity extends AppCompatActivity {
             editTextAge.setError("Pflichtfeld");
             editTextAge.requestFocus();
             return;
+        }
+
+        if (sportLevel == -1) {
+            Toast.makeText(RegistrierenActivity.this,
+                            "Sportlichkeit nicht ausgewählt",
+                            Toast.LENGTH_SHORT)
+                    .show();
         }
 
         if (email.isEmpty()) {
@@ -119,7 +157,7 @@ public class RegistrierenActivity extends AppCompatActivity {
 
                         if (task.isSuccessful()) {
 
-                            User user = new User(name, age, email);
+                            User user = new User(name, age, email, sportLevel);
                     // prüfen, ob Task erfolgreich war
                             db.getReference("Users")
                                     .child(mAuth.getCurrentUser().getUid())

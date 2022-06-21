@@ -145,6 +145,63 @@
         android:orientation="vertical"
         android:layout_marginTop="0dp"
         android:layout_gravity="center">
+        <TextView
+            android:id="@+id/textGeschlecht"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:text="Wie sportlich bist du?"/>
+
+        <RadioGroup
+            android:id="@+id/radioGroupSportLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="0dp"
+            android:layout_gravity="center">
+
+                <RadioButton
+                    android:id="@+id/sportLevel1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="gar nicht sportlich"/>
+
+            <RadioButton
+                android:id="@+id/sportLevel2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ein bisschen sportlich" />
+
+            <RadioButton
+                android:id="@+id/sportLevel3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="mittelmäßig sportlich"/>
+
+            <RadioButton
+                android:id="@+id/sportLevel4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="sportlich"/>
+
+            <RadioButton
+                android:id="@+id/sportLevel5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="sehr sportlich"/>
+
+        </RadioGroup>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="0dp"
+        android:layout_gravity="center">
 
         <EditText
             android:id="@+id/editEmail"
