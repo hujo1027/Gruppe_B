@@ -110,6 +110,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 if (task.isSuccessful()) {
                     // User zum Profil zurückleiten
                     startActivity(new Intent(LoginActivity.this, MainActivity.class ));
+                     Toast.makeText(LoginActivity.this, "Eingeloggt.", Toast
+                            .LENGTH_LONG).show();
 
                 } else {
                     Toast.makeText(LoginActivity.this, "Login fehlgeschlagen, bitte Anmeldedaten überprüfen.", Toast
