@@ -24,6 +24,8 @@ public class UebungsetsActivity extends AppCompatActivity {
     List<String> groupList;
     List<String> childList;
     Map<String, List<String>> uebungssets;
+    FloatingActionButton info;
+
 
     private FirebaseAuth mAuth;
 
@@ -53,6 +55,27 @@ public class UebungsetsActivity extends AppCompatActivity {
             TextView userNameNavigationheader = findViewById(R.id.nameNavigation);
             userNameNavigationheader.setText("Nutzername");
         }
+        
+         info = findViewById(R.id.setsinfo);
+        info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).setMessage("Hier stehen Ihnen einige Übungssets zur Verfügung aus denen sie frei wählen können!\n" +
+                        "Sollten sie keine Fitnessclubmitgliedschaft haben und bereits ein höheres Alter erreicht haben empfehlen wir Ihnen eines der leichten Übungssets.\n" +
+                        "Wenn Ihnen diese als zu einfach erscheinen sollten empfehlen wir Ihnen die mittleren Übungssets.\n" +
+                        "Falls sie sehr sportlich sind und eine Herausforderung suchen empfehlen wir Ihnen die schweren Übungssets.\n" +
+                        "Viel Spaß!").setTitle("Empfehlung").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                }).create();
+                alertDialog.show();
+
+            }
+        });
 
         createGroupList();
         createCollection();
