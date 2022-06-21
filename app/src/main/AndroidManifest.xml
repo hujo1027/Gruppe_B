@@ -29,7 +29,7 @@
         <activity
             android:name=".RegistrierenActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".LoginActivity"/>
         <activity
             android:name=".ScoreActivity"
             android:exported="false"
