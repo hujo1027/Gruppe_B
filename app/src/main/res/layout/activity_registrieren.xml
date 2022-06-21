@@ -55,7 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="0dp"
         android:layout_gravity="center">
 
         <EditText
@@ -159,31 +159,22 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginTop="0dp"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+           >
 
-                <RadioButton
+            <RadioButton
                     android:id="@+id/sportLevel1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="gar nicht sportlich"/>
 
-            <RadioButton
-                android:id="@+id/sportLevel2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ein bisschen sportlich" />
+
 
             <RadioButton
                 android:id="@+id/sportLevel3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="mittelmäßig sportlich"/>
-
-            <RadioButton
-                android:id="@+id/sportLevel4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="sportlich"/>
 
             <RadioButton
                 android:id="@+id/sportLevel5"
@@ -257,7 +248,8 @@
             android:drawableLeft="@drawable/ic_registrieren"
             android:text="Registrieren"
             android:backgroundTint="@color/magenta"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:layout_marginBottom="0dp"/>
     </LinearLayout>
 
 
