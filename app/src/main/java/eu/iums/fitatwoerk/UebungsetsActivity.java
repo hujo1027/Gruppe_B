@@ -5,9 +5,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,6 +25,7 @@ public class UebungsetsActivity extends AppCompatActivity {
     List<String> childList;
     Map<String, List<String>> uebungssets;
 
+    private FirebaseAuth mAuth;
 
 
     @Override
@@ -29,13 +33,26 @@ public class UebungsetsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_uebungsets);
 
+        mAuth = FirebaseAuth.getInstance();
+
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Übungssets");
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
+        // Benutzername anzeigen
+        if(mAuth.getCurrentUser() != null) {
+            TextView userNameToolbar = findViewById(R.id.name);
+            userNameToolbar.setText(mAuth.getCurrentUser().getDisplayName());
+            TextView userNameNavigationheader = findViewById(R.id.nameNavigation);
+            userNameNavigationheader.setText(mAuth.getCurrentUser().getDisplayName());
+        } else {
+            TextView userNameToolbar = findViewById(R.id.name);
+            userNameToolbar.setText("Nutzername");
+            TextView userNameNavigationheader = findViewById(R.id.nameNavigation);
+            userNameNavigationheader.setText("Nutzername");
+        }
 
         createGroupList();
         createCollection();

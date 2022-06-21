@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">FitAtWoerk</string>
-    <string name="name">[Nutzername]</string>
+    <string name="name">%s</string>
     <string name="Begruessung">Hallo, </string>
     <string name="uebungen">Übungen</string>
     <string name="uebungsets">Übungs-Sets</string>

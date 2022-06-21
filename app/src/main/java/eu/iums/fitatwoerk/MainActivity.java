@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -80,6 +81,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.bringToFront();
 
+        // Benutzername anzeigen
+        if(mAuth.getCurrentUser() != null) {
+            TextView userNameToolbar = findViewById(R.id.name);
+            userNameToolbar.setText(mAuth.getCurrentUser().getDisplayName());
+            TextView userNameNavigationheader = findViewById(R.id.nameNavigation);
+            userNameNavigationheader.setText(mAuth.getCurrentUser().getDisplayName());
+        } else {
+            TextView userNameToolbar = findViewById(R.id.name);
+            userNameToolbar.setText("Nutzername");
+            // hier kommt ein Fehler, so dass App abstürzt
+            TextView userNameNavigationheader = findViewById(R.id.nameNavigation);
+            userNameNavigationheader.setText("Nutzername");
+        }
 
         //uebungsimagebuttons
 

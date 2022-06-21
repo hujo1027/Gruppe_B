@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -60,7 +61,18 @@ public class RegistrierenActivity extends AppCompatActivity {
 
         radioGroup = (RadioGroup) findViewById(R.id.radioGroupSportLevel);
 
-
+        // Benutzername anzeigen
+        if(mAuth.getCurrentUser() != null) {
+            TextView userNameToolbar = findViewById(R.id.name);
+            userNameToolbar.setText(mAuth.getCurrentUser().getDisplayName());
+            TextView userNameNavigationheader = findViewById(R.id.nameNavigation);
+            userNameNavigationheader.setText(mAuth.getCurrentUser().getDisplayName());
+        } else {
+            TextView userNameToolbar = findViewById(R.id.name);
+            userNameToolbar.setText("Nutzername");
+            TextView userNameNavigationheader = findViewById(R.id.nameNavigation);
+            userNameNavigationheader.setText("Nutzername");
+        }
 
     }
 
@@ -68,11 +80,7 @@ public class RegistrierenActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            currentUser.reload();
-        }
+
     }
 
     private void registerUser() {

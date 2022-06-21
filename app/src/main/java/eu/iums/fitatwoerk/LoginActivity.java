@@ -6,6 +6,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -46,6 +47,19 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         editTextEmail = findViewById(R.id.editEmail);
         editTextPassword = findViewById(R.id.editPassword);
+
+        // Benutzername anzeigen
+        if(mAuth.getCurrentUser() != null) {
+            TextView userNameToolbar = findViewById(R.id.name);
+            userNameToolbar.setText(mAuth.getCurrentUser().getDisplayName());
+            TextView userNameNavigationheader = findViewById(R.id.nameNavigation);
+            userNameNavigationheader.setText(mAuth.getCurrentUser().getDisplayName());
+        } else {
+            TextView userNameToolbar = findViewById(R.id.name);
+            userNameToolbar.setText("Nutzername");
+            TextView userNameNavigationheader = findViewById(R.id.nameNavigation);
+            userNameNavigationheader.setText("Nutzername");
+        }
 
     }
 
