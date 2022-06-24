@@ -55,6 +55,15 @@ public class UebungActivity extends AppCompatActivity {
         String value = extras.getString("KEY");
         ArrayList<SlideModel> slideModelList = new ArrayList<>();
 
+        fabset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                finish();
+
+            }
+        });
+
         switch (value) {
             case "uebung1":
                 slideModelList.add(new SlideModel (R.drawable.f5, null));
@@ -74,16 +83,6 @@ public class UebungActivity extends AppCompatActivity {
                         }).create();
                         alertDialog.show();
 
-
-                    }
-                });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
 
                     }
                 });
@@ -110,16 +109,6 @@ public class UebungActivity extends AppCompatActivity {
 
                     }
                 });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
-
-                    }
-                });
                 break;
 
             case "uebung3":
@@ -140,16 +129,6 @@ public class UebungActivity extends AppCompatActivity {
                         }).create();
                         alertDialog.show();
 
-
-                    }
-                });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
 
                     }
                 });
@@ -176,16 +155,6 @@ public class UebungActivity extends AppCompatActivity {
 
                     }
                 });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
-
-                    }
-                });
                 break;
 
             case "uebung5":
@@ -206,16 +175,6 @@ public class UebungActivity extends AppCompatActivity {
                         }).create();
                         alertDialog.show();
 
-
-                    }
-                });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
 
                     }
                 });
@@ -240,17 +199,8 @@ public class UebungActivity extends AppCompatActivity {
 
                     }
                 });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
-
-                    }
-                });
                 break;
+
             case "uebung7":
                 slideModelList.add(new SlideModel (R.drawable.f14, null));
                 imageSlider.setImageList(slideModelList, ScaleTypes.CENTER_INSIDE);
@@ -270,16 +220,6 @@ public class UebungActivity extends AppCompatActivity {
                         }).create();
                         alertDialog.show();
 
-
-                    }
-                });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
 
                     }
                 });
@@ -303,16 +243,6 @@ public class UebungActivity extends AppCompatActivity {
                         }).create();
                         alertDialog.show();
 
-
-                    }
-                });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
 
                     }
                 });
@@ -341,16 +271,6 @@ public class UebungActivity extends AppCompatActivity {
 
                     }
                 });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
-
-                    }
-                });
                 break;
 
             case "uebung10":
@@ -376,16 +296,6 @@ public class UebungActivity extends AppCompatActivity {
 
                     }
                 });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
-
-                    }
-                });
                 break;
 
             case "uebung11":
@@ -407,17 +317,8 @@ public class UebungActivity extends AppCompatActivity {
 
                     }
                 });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
-
-                    }
-                });
                 break;
+
             case "uebung12":
                 slideModelList.add(new SlideModel (R.drawable.f24, null));
                 slideModelList.add(new SlideModel (R.drawable.f17, null));
@@ -436,16 +337,6 @@ public class UebungActivity extends AppCompatActivity {
                         }).create();
                         alertDialog.show();
 
-
-                    }
-                });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
 
                     }
                 });
@@ -473,16 +364,6 @@ public class UebungActivity extends AppCompatActivity {
 
                     }
                 });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
-
-                    }
-                });
                 break;
 
             case "uebung14":
@@ -506,16 +387,6 @@ public class UebungActivity extends AppCompatActivity {
 
                     }
                 });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
-
-                    }
-                });
                 break;
 
             case "uebung15":
@@ -534,16 +405,6 @@ public class UebungActivity extends AppCompatActivity {
                         }).create();
                         alertDialog.show();
 
-
-                    }
-                });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
 
                     }
                 });
@@ -576,16 +437,6 @@ public class UebungActivity extends AppCompatActivity {
 
                     }
                 });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
-
-                    }
-                });
                 break;
 
             case "uebung17":
@@ -606,16 +457,6 @@ public class UebungActivity extends AppCompatActivity {
                         }).create();
                         alertDialog.show();
 
-
-                    }
-                });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
 
                     }
                 });
@@ -644,16 +485,6 @@ public class UebungActivity extends AppCompatActivity {
 
                     }
                 });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
-
-                    }
-                });
                 break;
 
             case "uebung19":
@@ -673,16 +504,6 @@ public class UebungActivity extends AppCompatActivity {
                         }).create();
                         alertDialog.show();
 
-
-                    }
-                });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
 
                     }
                 });
@@ -709,16 +530,6 @@ public class UebungActivity extends AppCompatActivity {
 
                     }
                 });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
-
-                    }
-                });
                 break;
 
             case "uebung21":
@@ -742,17 +553,8 @@ public class UebungActivity extends AppCompatActivity {
 
                     }
                 });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
-
-                    }
-                });
                 break;
+
             case "uebung22":
                 slideModelList.add(new SlideModel (R.drawable.f30, null));
                 slideModelList.add(new SlideModel (R.drawable.f41, null));
@@ -774,16 +576,6 @@ public class UebungActivity extends AppCompatActivity {
                         }).create();
                         alertDialog.show();
 
-
-                    }
-                });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
 
                     }
                 });
@@ -810,17 +602,8 @@ public class UebungActivity extends AppCompatActivity {
 
                     }
                 });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
-
-                    }
-                });
                 break;
+
             case "uebung24":
                 slideModelList.add(new SlideModel (R.drawable.f31, null));
                 slideModelList.add(new SlideModel (R.drawable.f32, null));
@@ -841,17 +624,8 @@ public class UebungActivity extends AppCompatActivity {
 
                     }
                 });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
-
-                    }
-                });
                 break;
+
             case "uebung25":
                 slideModelList.add(new SlideModel (R.drawable.f43, null));
                 slideModelList.add(new SlideModel (R.drawable.f36, null));
@@ -875,17 +649,8 @@ public class UebungActivity extends AppCompatActivity {
 
                     }
                 });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
-
-                    }
-                });
                 break;
+
             case "uebung26":
                 slideModelList.add(new SlideModel (R.drawable.f48, null));
 
@@ -909,17 +674,8 @@ public class UebungActivity extends AppCompatActivity {
 
                     }
                 });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
-
-                    }
-                });
                 break;
+
             case "uebung27":
                 slideModelList.add(new SlideModel (R.drawable.f44, null));
                 slideModelList.add(new SlideModel (R.drawable.f42, null));
@@ -944,17 +700,8 @@ public class UebungActivity extends AppCompatActivity {
 
                     }
                 });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
-
-                    }
-                });
                 break;
+
             case "uebung28":
                 slideModelList.add(new SlideModel (R.drawable.f44, null));
                 slideModelList.add(new SlideModel (R.drawable.f42, null));
@@ -974,16 +721,6 @@ public class UebungActivity extends AppCompatActivity {
                         }).create();
                         alertDialog.show();
 
-
-                    }
-                });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
 
                     }
                 });
@@ -1011,16 +748,6 @@ public class UebungActivity extends AppCompatActivity {
 
                     }
                 });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
-
-                    }
-                });
                 break;
 
             case "uebung30":
@@ -1042,16 +769,6 @@ public class UebungActivity extends AppCompatActivity {
                         }).create();
                         alertDialog.show();
 
-
-                    }
-                });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
 
                     }
                 });
@@ -1081,16 +798,6 @@ public class UebungActivity extends AppCompatActivity {
 
                     }
                 });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
-
-                    }
-                });
                 break;
 
             case "uebung32":
@@ -1113,17 +820,8 @@ public class UebungActivity extends AppCompatActivity {
 
                     }
                 });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
-
-                    }
-                });
                 break;
+
             case "uebung33":
                 slideModelList.add(new SlideModel (R.drawable.f47, null));
                 slideModelList.add(new SlideModel (R.drawable.f35, null));
@@ -1142,16 +840,6 @@ public class UebungActivity extends AppCompatActivity {
                         }).create();
                         alertDialog.show();
 
-
-                    }
-                });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
 
                     }
                 });
@@ -1177,17 +865,8 @@ public class UebungActivity extends AppCompatActivity {
 
                     }
                 });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
-
-                    }
-                });
                 break;
+
             case "uebung35":
                 slideModelList.add(new SlideModel (R.drawable.f52, null));
                 slideModelList.add(new SlideModel (R.drawable.f58, null));
@@ -1208,16 +887,6 @@ public class UebungActivity extends AppCompatActivity {
                         }).create();
                         alertDialog.show();
 
-
-                    }
-                });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
 
                     }
                 });
@@ -1245,17 +914,8 @@ public class UebungActivity extends AppCompatActivity {
 
                     }
                 });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
-
-                    }
-                });
                 break;
+
             case "uebung37":
                 slideModelList.add(new SlideModel (R.drawable.f50, null));
                 slideModelList.add(new SlideModel (R.drawable.f51, null));
@@ -1280,17 +940,8 @@ public class UebungActivity extends AppCompatActivity {
 
                     }
                 });
-
-
-                fabset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        finish();
-
-                    }
-                });
                 break;
+                
         }
 
 
@@ -1303,6 +954,7 @@ public class UebungActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        /*
         // Benutzername anzeigen
         if(mAuth.getCurrentUser() != null) {
             TextView userNameToolbar = findViewById(R.id.name);
@@ -1316,6 +968,8 @@ public class UebungActivity extends AppCompatActivity {
             userNameNavigationheader.setText("Nutzername");
         }
 
+
+         */
 
 
         fabset.setOnClickListener(new View.OnClickListener() {
