@@ -54,39 +54,19 @@
                     android:src="@drawable/exercise_explanation"
                     android:clickable="true" />
 
-
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/fabVorherigeUebung"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:src="@drawable/exercise_explanation"
-                    android:clickable="true" />
-
-
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/StartPauseKnopf"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/start_exercise"
-                    android:layout_marginLeft="10dp" />
-
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/fabNaechsteUebung"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:src="@drawable/exercise_explanation"
-                    android:clickable="true" />
-
-
+                    android:layout_marginLeft="80dp" />
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/fabSet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:src="@drawable/insert_to_list"
+                    android:layout_marginLeft="90dp"
+                    android:src="@drawable/ic_baseline_arrow_back_24"
                     android:clickable="true" />
 
             </LinearLayout>
