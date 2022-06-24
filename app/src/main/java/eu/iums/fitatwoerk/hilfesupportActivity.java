@@ -38,7 +38,7 @@ public class hilfesupportActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        /*
+        
         // Benutzername anzeigen
         if (mAuth.getCurrentUser() != null) {
             TextView userNameToolbar = findViewById(R.id.name);
@@ -52,7 +52,7 @@ public class hilfesupportActivity extends AppCompatActivity {
             userNameNavigationheader.setText("Nutzername");
         }
 
-         */
+         
 
 
 
