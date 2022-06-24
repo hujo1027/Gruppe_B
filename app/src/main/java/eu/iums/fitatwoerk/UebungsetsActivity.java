@@ -438,10 +438,10 @@ public class UebungsetsActivity extends AppCompatActivity {
         }
     }
 
-    private void loadChild(String[] mobileModels) {
+    private void loadChild(String[] uebungen) {
         childList = new ArrayList<>();
-        for(String model : mobileModels){
-            childList.add(model);
+        for(String uebung : uebungen){
+            childList.add(uebung);
         }
     }
 
