@@ -954,7 +954,7 @@ public class UebungActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        /*
+        
         // Benutzername anzeigen
         if(mAuth.getCurrentUser() != null) {
             TextView userNameToolbar = findViewById(R.id.name);
@@ -967,18 +967,6 @@ public class UebungActivity extends AppCompatActivity {
             TextView userNameNavigationheader = findViewById(R.id.nameNavigation);
             userNameNavigationheader.setText("Nutzername");
         }
-
-
-         */
-
-
-        fabset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), UebungsetsActivity.class);
-                startActivity(intent);
-            }
-        });
 
 
         //TIMER
