@@ -91,7 +91,7 @@ public class hilfesupportActivity extends AppCompatActivity {
                     loadChild(frage2);
                 else if (group.equals("Wie führe ich die Übungen aus?"))
                     loadChild(frage3);
-                else if (group.equals("Woher steht der Score?"))
+                else if (group.equals("Wofür steht der Score?"))
                     loadChild(frage4);
                 else if (group.equals("Wie sicher sind meine Daten?"))
                     loadChild(frage5);
@@ -114,7 +114,7 @@ public class hilfesupportActivity extends AppCompatActivity {
             groupList.add("Was ist Fit@Work?");
             groupList.add("Wie funktioniert Fit@Work?");
             groupList.add("Wie führe ich die Übungen aus?");
-            groupList.add("Woher steht der Score?");
+            groupList.add("Wofür steht der Score?");
             groupList.add("Wie sicher sind meine Daten?");
             groupList.add("Wie kann ich mit Ihnen in Kontakt treten?");
         }
