@@ -84,14 +84,16 @@
             android:layout_width="300dp"
             android:layout_height="match_parent"
             android:hint="Passwort"
-            tools:ignore="TouchTargetSizeCheck" />
+            tools:ignore="TouchTargetSizeCheck"
+            app:passwordToggleEnabled="true"            />
 
         <TextView
             android:id="@+id/textPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="12sp"
-            android:text="Passwort eingeben"/>
+            android:text="Passwort eingeben"
+            />
     </LinearLayout>
 
     <LinearLayout

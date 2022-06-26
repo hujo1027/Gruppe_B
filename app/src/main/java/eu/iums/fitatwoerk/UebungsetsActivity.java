@@ -15,6 +15,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -46,21 +47,19 @@ public class UebungsetsActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Übungssets");
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        TextView userNameToolbar = findViewById(R.id.name);
 
-        // Benutzername anzeigen
-        if(mAuth.getCurrentUser() != null) {
-            TextView userNameToolbar = findViewById(R.id.name);
-            userNameToolbar.setText(mAuth.getCurrentUser().getDisplayName());
-            TextView userNameNavigationheader = findViewById(R.id.nameNavigation);
-            userNameNavigationheader.setText(mAuth.getCurrentUser().getDisplayName());
-        } else {
-            TextView userNameToolbar = findViewById(R.id.name);
-            userNameToolbar.setText("Nutzername");
-            TextView userNameNavigationheader = findViewById(R.id.nameNavigation);
-            userNameNavigationheader.setText("Nutzername");
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user != null) {
+            // User is Login
+            userNameToolbar.setText("Online ");
         }
-        
-         info = findViewById(R.id.setsinfo);
+
+        else {
+            userNameToolbar.setText("Offline ");
+        }
+
+        info = findViewById(R.id.setsinfo);
         info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

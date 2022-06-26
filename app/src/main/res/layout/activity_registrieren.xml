@@ -74,47 +74,47 @@
 
     </LinearLayout>
 
-   <!-- <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="0dp"
-        android:layout_gravity="center">
+    <!-- <LinearLayout
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:orientation="vertical"
+         android:layout_marginTop="0dp"
+         android:layout_gravity="center">
 
-        <EditText
-            android:layout_width="300dp"
-            android:layout_height="match_parent"
-            android:hint="Nachname"
-            />
+         <EditText
+             android:layout_width="300dp"
+             android:layout_height="match_parent"
+             android:hint="Nachname"
+             />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="12sp"
-            android:text="Nachname eingeben"/>
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:textSize="12sp"
+             android:text="Nachname eingeben"/>
 
-    </LinearLayout>
+     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="0dp"
-        android:layout_gravity="center">
+     <LinearLayout
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:orientation="vertical"
+         android:layout_marginTop="0dp"
+         android:layout_gravity="center">
 
-        <EditText
-            android:layout_width="300dp"
-            android:layout_height="match_parent"
-            android:hint="Nutzername"
-            />
+         <EditText
+             android:layout_width="300dp"
+             android:layout_height="match_parent"
+             android:hint="Nutzername"
+             />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="12sp"
-            android:text="Benutzername eingeben"/>
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:textSize="12sp"
+             android:text="Benutzername eingeben"/>
 
-    </LinearLayout> !-->
+     </LinearLayout> !-->
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -160,13 +160,13 @@
             android:orientation="vertical"
             android:layout_marginTop="0dp"
             android:layout_gravity="center"
-           >
+            >
 
             <RadioButton
-                    android:id="@+id/sportLevel1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="gar nicht sportlich"/>
+                android:id="@+id/sportLevel1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="gar nicht sportlich"/>
 
 
 

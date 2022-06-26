@@ -2,8 +2,10 @@ package eu.iums.fitatwoerk;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Patterns;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -17,6 +19,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     Toolbar toolbar;
@@ -47,20 +50,20 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         editTextEmail = findViewById(R.id.editEmail);
         editTextPassword = findViewById(R.id.editPassword);
+        editTextPassword.setTransformationMethod(new PasswordTransformationMethod());
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
-        // Benutzername anzeigen
-        if(mAuth.getCurrentUser() != null) {
-            TextView userNameToolbar = findViewById(R.id.name);
-            userNameToolbar.setText(mAuth.getCurrentUser().getDisplayName());
-            TextView userNameNavigationheader = findViewById(R.id.nameNavigation);
-            userNameNavigationheader.setText(mAuth.getCurrentUser().getDisplayName());
-        } else {
-            TextView userNameToolbar = findViewById(R.id.name);
-            userNameToolbar.setText("Nutzername");
-            TextView userNameNavigationheader = findViewById(R.id.nameNavigation);
-            userNameNavigationheader.setText("Nutzername");
+        TextView userNameToolbar = findViewById(R.id.name);
+
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user != null) {
+            // User is Login
+            userNameToolbar.setText("Online ");
         }
 
+        else {
+            userNameToolbar.setText("Offline ");
+        }
     }
 
     @Override
@@ -110,7 +113,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 if (task.isSuccessful()) {
                     // User zum Profil zurückleiten
                     startActivity(new Intent(LoginActivity.this, MainActivity.class ));
-                     Toast.makeText(LoginActivity.this, "Eingeloggt.", Toast
+                    Toast.makeText(LoginActivity.this, "Eingeloggt.", Toast
                             .LENGTH_LONG).show();
 
                 } else {

@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class ProfilActivity extends AppCompatActivity {
     Toolbar toolbar;
@@ -25,18 +26,16 @@ public class ProfilActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Profil");
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        TextView userNameToolbar = findViewById(R.id.name);
 
-        // Benutzername anzeigen
-        if(mAuth.getCurrentUser() != null) {
-            TextView userNameToolbar = findViewById(R.id.name);
-            userNameToolbar.setText(mAuth.getCurrentUser().getDisplayName());
-            TextView userNameNavigationheader = findViewById(R.id.nameNavigation);
-            userNameNavigationheader.setText(mAuth.getCurrentUser().getDisplayName());
-        } else {
-            TextView userNameToolbar = findViewById(R.id.name);
-            userNameToolbar.setText("Nutzername");
-            TextView userNameNavigationheader = findViewById(R.id.nameNavigation);
-            userNameNavigationheader.setText("Nutzername");
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user != null) {
+            // User is Login
+            userNameToolbar.setText("Online ");
+        }
+
+        else {
+            userNameToolbar.setText("Offline ");
         }
     }
 }

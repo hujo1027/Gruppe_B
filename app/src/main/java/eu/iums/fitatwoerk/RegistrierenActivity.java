@@ -2,6 +2,7 @@ package eu.iums.fitatwoerk;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -59,20 +60,20 @@ public class RegistrierenActivity extends AppCompatActivity {
         editTextAge = (EditText) findViewById(R.id.editAge);
         editTextEmail = (EditText) findViewById(R.id.editEmail);
         editTextPassword = (EditText) findViewById(R.id.editPassword);
+        editTextPassword.setTransformationMethod(new PasswordTransformationMethod());
 
         radioGroup = (RadioGroup) findViewById(R.id.radioGroupSportLevel);
 
-        // Benutzername anzeigen
-        if(mAuth.getCurrentUser() != null) {
-            TextView userNameToolbar = findViewById(R.id.name);
-            userNameToolbar.setText(mAuth.getCurrentUser().getDisplayName());
-            TextView userNameNavigationheader = findViewById(R.id.nameNavigation);
-            userNameNavigationheader.setText(mAuth.getCurrentUser().getDisplayName());
-        } else {
-            TextView userNameToolbar = findViewById(R.id.name);
-            userNameToolbar.setText("Nutzername");
-            TextView userNameNavigationheader = findViewById(R.id.nameNavigation);
-            userNameNavigationheader.setText("Nutzername");
+        TextView userNameToolbar = findViewById(R.id.name);
+
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user != null) {
+            // User is Login
+            userNameToolbar.setText("Online ");
+        }
+
+        else {
+            userNameToolbar.setText("Offline ");
         }
 
     }
@@ -158,7 +159,7 @@ public class RegistrierenActivity extends AppCompatActivity {
 
 
 
-    // User in der Datenbank anlegen
+        // User in der Datenbank anlegen
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -167,7 +168,7 @@ public class RegistrierenActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
 
                             User user = new User(name, age, email, sportLevel);
-                    // prüfen, ob Task erfolgreich war
+                            // prüfen, ob Task erfolgreich war
                             db.getReference("Users")
                                     .child(mAuth.getCurrentUser().getUid())
                                     .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -178,8 +179,8 @@ public class RegistrierenActivity extends AppCompatActivity {
                                                 Toast.makeText(RegistrierenActivity.this, "Nutzer wurde erfolgreich registriert.", Toast.LENGTH_LONG).show();
 
                                                 // User zum Profil zurückleiten
-                                                Intent intent_login = new Intent(RegistrierenActivity.this, LoginActivity.class);
-                                                startActivity(intent_login);
+                                                Intent intent_main = new Intent(RegistrierenActivity.this, MainActivity.class);
+                                                startActivity(intent_main);
 
                                             } else {
                                                 Toast.makeText(RegistrierenActivity.this, "Registieren Fehlgeschlagen, bitte nochmal versuchen.", Toast.LENGTH_LONG).show();

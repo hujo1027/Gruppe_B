@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         toolbar = findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_burgermenu);
+
+
         //nameTextView = findViewById(R.id.name);
 
 
@@ -57,9 +59,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-
-
         FirebaseApp.initializeApp(this);
+
         mAuth = FirebaseAuth.getInstance();
 
         /*if(mAuth.getCurrentUser() == null) {
@@ -81,20 +82,33 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.bringToFront();
 
+
+        TextView userNameToolbar = findViewById(R.id.name);
+
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user != null) {
+            // User is Login
+            userNameToolbar.setText("Online ");
+        }
+
+        else {
+            userNameToolbar.setText("Offline ");
+        }
+
+
+
+        /*
         // Benutzername anzeigen
         if(mAuth.getCurrentUser() != null) {
             TextView userNameToolbar = findViewById(R.id.name);
-            userNameToolbar.setText(mAuth.getCurrentUser().getDisplayName());
-            TextView userNameNavigationheader = findViewById(R.id.nameNavigation);
-            userNameNavigationheader.setText(mAuth.getCurrentUser().getDisplayName());
+            userNameToolbar.setText("Nutzername");
         } else {
             TextView userNameToolbar = findViewById(R.id.name);
-            userNameToolbar.setText("Nutzername");
-            // hier kommt ein Fehler, so dass App abstürzt
-            TextView userNameNavigationheader = findViewById(R.id.nameNavigation);
-            userNameNavigationheader.setText("Nutzername");
+            userNameToolbar.setText(mAuth.getCurrentUser().getDisplayName());
         }
 
+
+         */
         //uebungsimagebuttons
 
         u1 = findViewById(R.id.imagebutton1); u1.setOnClickListener(new Click());
@@ -365,10 +379,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Intent intent_profile = new Intent(this, ProfilActivity.class);
                 startActivity(intent_profile);
                 break;
-            case R.id.einstellungen:
-                Intent intent_einstellungen = new Intent(this, EinstellungenActivity.class);
-                startActivity(intent_einstellungen);
-                break;
+
             case R.id.login:
                 Intent intent_login = new Intent(this, LoginActivity.class);
                 startActivity(intent_login);
@@ -378,9 +389,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 FirebaseUser user = mAuth.getCurrentUser();
                 if(user != null) {
                     mAuth.signOut();
-                    Toast.makeText(this, " Ausgeloggt", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, " Ausgeloggt.", Toast.LENGTH_LONG).show();
                 }
+
                 break;
+
+
             case R.id.hilfesupport:
                 Intent intent = new Intent(this, hilfesupportActivity.class);
                 startActivity(intent);

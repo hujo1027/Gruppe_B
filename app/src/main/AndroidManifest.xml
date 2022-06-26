@@ -19,10 +19,6 @@
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".EinstellungenActivity"
-            android:exported="false"
-            android:parentActivityName=".MainActivity"/>
-        <activity
             android:name=".ProfilActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity"/>
